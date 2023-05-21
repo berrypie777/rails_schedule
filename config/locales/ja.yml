@@ -1,0 +1,7 @@
+# config/locales/ja.yml
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"
+      date: "%Y/%m/%d"
+      time: "%H:%M"

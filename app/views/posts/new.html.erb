@@ -1,0 +1,35 @@
+<div class="newContainer">
+    <div class="formContainer">
+        <h3 class="newTitle">予定を新規作成</h3> 
+        <div class="newForm">
+            <%= form_with model:@post, html: { class: "row g-3" } do |f| %>    
+                <div class="col-12">
+                    <%= f.label :title, "タイトル", class: "form-label formRequired" %>
+                    <%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
+                </div>
+                <div class="col-md-6">
+                    <%= f.label :start_date, "開始日", class: "form-label formRequired" %>
+                    <%= f.text_field :start_date, class: "form-control", id:"flatpickr", data: { behavior: "flatpickr" }, placeholder: "---- / -- / --" %>
+                </div>
+                <div class="col-md-6">
+                    <%= f.label :end_date, "終了日", class: "form-label formRequired" %>
+                    <%= f.text_field :end_date, class: "form-control", id: "flatpickr", data: { behavior: "flatpickr" }, placeholder: "---- / -- / --" %>
+                </div>
+                <div class="col-12 form-check">
+                    <%= f.check_box :all_day, class: "form-check-input" %>
+                    <%= f.label :all_day, "終日の場合はチェックを入れます", class: "form-check-label" %>
+                </div>
+                <div class="col-12 memoForm">
+                    <%= f.label "スケジュールメモ", class: "form-label" %>
+                    <%=f.text_area :memo, class: "form-control memoArea", placeholder: "メモを入力する" %>
+                </div>
+                <div class="col-12 submitForm">
+                    <%= link_to "キャンセル", :posts, class:"btn btn-secondary" %>
+                    <%= f.submit "保存", class:"btn btn-primary" %>
+                </div>
+            <% end %> 
+        </div>
+    </div>   
+</div>
+
+

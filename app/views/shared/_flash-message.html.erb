@@ -1,0 +1,8 @@
+<% flash.each do |key, message| %>
+  <div class="alert alert-primary flashMessage-<%= key %>">
+    <%= message %>
+    <button type="button" class="btn-close" aria-label="Close" onclick="this.parentNode.style.display = 'none'"></button>
+  </div>
+<% end %>
+
+

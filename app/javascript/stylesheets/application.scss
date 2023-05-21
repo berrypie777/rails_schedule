@@ -1,0 +1,256 @@
+@import '~bootstrap/scss/bootstrap';
+@import "flatpickr/dist/flatpickr.css";
+
+body {
+    background-color: #f6f6f6;
+}
+
+header {
+    box-sizing: border-box;
+    display: block;
+
+    .titleBar {
+        background-color: #1c1d3b;
+        height: 50px;
+        margin-bottom: 24px;
+        display: flex;
+        position: relative;
+
+        .titleContainer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: inherit;
+
+            .titleText {
+                color: white;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 18px;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.flashMessage-notice {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flashMessage-alert {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFB6C1;
+}
+
+.flatpickr-button {
+    display: inline;
+}
+
+.indexContainer {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 12px;
+
+    .indexTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 18px;
+
+        .pageTitle {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 26px;
+        }
+
+        .btn {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            height: 45px;
+            padding: 12px 20px;
+        }
+    }
+
+    .tableIndex {
+        background-color: white;
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 0;
+    }
+
+    .card {
+        border-radius: 15px;
+        position: relative;
+        flex-direction: column;
+        margin-top: 40px;
+
+        .card-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            .card-title {
+                font-size: 16px;
+                line-height: 26px;
+
+                span {
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-right: 4px;
+                    margin-left: 8px;
+                }
+            }
+
+            .card-text {
+                color: gray;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.newContainer, .editContainer {
+    width: 100%;
+    max-width: 980px;
+    padding: 0 12px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .formContainer {
+        width: 640px;
+        margin: auto;
+        height: fit-content;
+
+        .newTitle, .editTitle {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 26px;
+        }
+
+        .newForm, .editForm {
+            background-color: #fff;
+            border-radius: 4px;
+            height: fit-content;
+            margin-top: 18px;
+            padding: 24px;
+
+            .form-label {
+                font-size: 14px;
+                font-weight: 700;
+            }
+
+            .form-check-label {
+                font-size: 14px;                
+            }
+
+            .form-check-input {
+                border: 2px solid #a2a2a4;
+                margin-right: 12px;
+                margin-left: -1em;
+                height: 18px;
+                width: 18px;
+            }
+
+            .memoArea {
+                height: 124px;
+                padding: 12px;
+            }
+
+            .submitForm {
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+            }
+
+            .form-control::placeholder {
+                font-size: 14px;
+                color: gray;
+            }
+
+            .formRequired::after {
+                content: "*";
+                color: #ff4949;
+                font-size: 14px;
+                margin-left: 4px;
+            }
+        }
+    }
+}
+
+.showContainer {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 12px;
+
+    .formSection {
+        margin: auto;
+        width: 640px;
+
+        .linkToIndex {
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .showTitle {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 18px;
+
+            .showTitleText {
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+            .linkToEdit {
+                font-size: 14px;
+                font-weight: 700;
+                height: 45px;
+                padding: 12px 20px;
+            }
+        }
+
+        .formContainer {
+            background-color: #fff;
+            padding: 24px;
+            
+            .showTable {
+                font-size: 14px;
+                line-height: 18px;
+
+                th {
+                    background-color: #f7f9fc;
+                    width: 144px;
+                    padding: 20px 16px;
+                }
+
+                td {
+                    padding: 20px 16px;
+                }
+            }
+        }
+    }
+}

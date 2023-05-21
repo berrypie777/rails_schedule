@@ -1,0 +1,64 @@
+<div class="indexContainer">
+    <div class="indexTitle">
+        <h3 class="pageTitle">予定一覧</h3>
+        <p><%= link_to "予定を追加", new_post_path, class: "btn btn-primary" %></p>
+    </div>
+    <div class="table-responsive scheduleIndex">
+        <table class="table tableIndex">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>タイトル</th>
+                    <th>開始日</th>
+                    <th>終了日</th>
+                    <th>終日</th>
+                    <th>更新日時</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @posts.each do |post| %>
+                    <tr>
+                        <td><%= post.id %></td>
+                        <td><%= post.title %></td>
+                        <td><%= post.start_date.strftime('%Y/%m/%d') %></td>
+                        <td><%= post.end_date.strftime('%Y/%m/%d') %></td>
+                        <td><%= post.all_day ? '⚪︎' : '' %></td>
+                        <td><%= post.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
+                        <td><%= link_to "詳細", post_path(post.id) %></td>
+                        <td><%= link_to "編集", edit_post_path(post.id) %></td>
+                        <td>
+                            <a href="#" class="linkToDelete" data-bs-toggle="modal" data-bs-target="#deleteModal">削除</a>
+                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="border-bottom: none;">
+                                            <h5 class="modal-title" id="deleteModalLabel">予定を削除しますか？</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body" style="border-bottom: none;">
+                                            <p>「確認」を削除してよろしいですか？<br>この操作は取り消せません。</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">キャンセル</button>
+                                             <%= link_to "削除", post_path(post.id), method: :delete, class:"btn btn-danger" %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <% end %>    
+            </tbody>
+        </table>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">予定合計:<span><%= @total_count %></span>件</h5>
+            <p class="card-text">本日の日付:<%= @today.strftime('%Y/%m/%d') %></p>
+        </div>
+    </div>
+</div>
+
